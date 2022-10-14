@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.tonel{
+    min-height: 200px;
+    width: 500px;
+    padding: 25px;
+    margin: 10px;
+    margin: auto;
+    
+}
+
+.dialogo{
+    width: 520px;
+    background-color: silver;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.dialogo input{
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    outline-style: none;
+}
+
+button{
+    height: 40px;
+    width: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    background: transparent;
+    margin: auto;
+    border: solid rgb(207, 207, 207);
+}
+button:hover{
+    background: #125FCE;
+    background: -moz-linear-gradient(left, #125FCE 0%, #0098EC 100%);
+    background: -webkit-linear-gradient(left, #125FCE 0%, #0098EC 100%);
+    background: linear-gradient(to right, #125FCE 0%, #0098EC 100%);
+    transition: 0.9s;
+    transform: scale(0.9);
+    border: solid silver;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 60% 40%;   
+}
+
+.banner{
+    background-image: url(./10905.jpg);
+    background-size: cover;
+    height: 1000px;
+}
