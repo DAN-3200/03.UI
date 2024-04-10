@@ -1,33 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>UI 03</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
 </head>
 <body>
-    <div class="grid">
-        <div class="banner">
-
-        </div>
-
+    <banner>
+        <img src="./Img/10905.jpg" alt="">
+        <div>
+            <button>
+                <i class="fa-regular fa-star"></i> 
+                <span> OHKEN STUDIO</span>
+            </button>
+        </div>    
+    </banner>
+    <main>
         <div class="tonel">
-            <div class="dialogo">
-                <input type="text" style="width:490px" value="login">
-            </div><br>
-
-            <div class="dialogo">
-                <input type="password" style="width:490px" value="password">
-            </div><br>
-            <div style="margin:auto; justify-content: center; display: flex; position: relative; right: -15px;">
-                <button></button>  
+            <div class="top">
+                <span>Login</span>
             </div>
-            
-        </div>
-    </div>
+            <div class="middle">
+                <div class="fieldInput">
+                    <span>Username</span>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="fieldInput">
+                    <span>Password</span>
+                    <input type="password" name="" id="">
+                </div>
+                <div class="checkBox">
+                    <input type="checkbox" name="" id="">
+                    <span>lembrar senha</span>
+                </div>
+                
+                <button type="submit">continue</button>
+                <span>Não possui conta? <a href="#">inscreva-se</a></span>
 
+            </div>
+            <div class="bottom">
+                © Daniel's Website 2024 - Todos os direitos reservados.
+            </div>
+        </div>
+    </main>
+    
 </body>
 </html>

@@ -1,56 +1,139 @@
-*{
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-}
-.tonel{
-    min-height: 200px;
-    width: 500px;
-    padding: 25px;
-    margin: 10px;
-    margin: auto;
-    
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 560;
+  font-style: normal;
 }
 
-.dialogo{
-    width: 520px;
-    background-color: silver;
-    padding: 5px;
-    border-radius: 10px;
+body {
+  background-color: #28282b;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
 }
 
-.dialogo input{
-    font-size: 18px;
-    border: none;
-    background-color: transparent;
-    outline-style: none;
+banner {
+  overflow: hidden;
+  display: flex;
+}
+banner img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+banner div {
+  width: 100%;
+  padding: 16px;
+}
+banner div button {
+  height: 40px;
+  border-radius: 8px;
+  background-color: #28282b;
+  border: none;
+  font-size: 16px;
+  color: silver;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 4px;
+  padding: 0px 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+banner div button span {
+  transition: 0.5s;
+  display: none;
+}
+banner div button:hover {
+  transition: 0.3s;
+  color: white;
+}
+banner div button:hover span {
+  transition: 0.2s;
+  display: block;
 }
 
-button{
-    height: 40px;
-    width: 100px;
-    padding: 10px;
-    border-radius: 15px;
-    background: transparent;
-    margin: auto;
-    border: solid rgb(207, 207, 207);
-}
-button:hover{
-    background: #125FCE;
-    background: -moz-linear-gradient(left, #125FCE 0%, #0098EC 100%);
-    background: -webkit-linear-gradient(left, #125FCE 0%, #0098EC 100%);
-    background: linear-gradient(to right, #125FCE 0%, #0098EC 100%);
-    transition: 0.9s;
-    transform: scale(0.9);
-    border: solid silver;
+a {
+  text-decoration: none;
+  color: #FFAA33;
 }
 
-.grid{
-    display: grid;
-    grid-template-columns: 60% 40%;   
+main {
+  background-color: white;
+  display: grid;
+  place-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-
-.banner{
-    background-image: url(./Img/10905.jpg);
-    background-size: cover;
-    height: 1000px;
+main .tonel {
+  width: 560px;
+  padding: 16px 28px;
+  display: grid;
+  height: 560px;
+  grid-template-rows: 0.4fr 1.6fr 0.4fr;
 }
+main .tonel .top {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
+main .tonel .top span::after {
+  content: "";
+  background-color: #FFAA33;
+  display: block;
+  width: 64px;
+  height: 5px;
+  border-radius: 4px;
+}
+main .tonel .middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+main .tonel .middle .fieldInput {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+main .tonel .middle .fieldInput input[type=text], main .tonel .middle .fieldInput input[type=password] {
+  width: 440px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  background-color: #e7e5e5;
+  outline: none;
+  padding: 0px 8px;
+  color: rgb(48, 47, 61);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+main .tonel .middle .checkBox {
+  align-self: flex-start;
+  position: relative;
+  right: -28px;
+  display: flex;
+  align-items: center;
+}
+main .tonel .middle button {
+  margin-top: 44px;
+  margin-bottom: 16px;
+  width: 90%;
+  height: 40px;
+  background-color: #FFAA33;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+main .tonel .bottom {
+  display: grid;
+  place-items: center;
+  color: rgb(59, 55, 68);
+  font-size: 12px;
+}/*# sourceMappingURL=style.css.map */

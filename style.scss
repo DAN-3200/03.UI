@@ -1,0 +1,159 @@
+// Imports
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// padrão 4|8-point grid
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-weight: 560;
+    font-style: normal;
+}
+
+body{
+    background-color: #28282b;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+}
+
+$colorOne : #FFAA33;
+$colorTwo : #F4BB44;
+
+banner{
+    overflow: hidden;
+    display: flex;
+
+    img{
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        z-index: -1;
+    }
+
+    & div{
+        width: 100%;
+        padding: 16px;
+        button{
+            height: 40px;
+            border-radius: 8px;
+            background-color: #28282b;
+            border: none;
+            font-size: 16px;
+            color: silver;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            gap: 4px;
+            padding: 0px 8px;
+            cursor: pointer;
+            transition: 0.2s;
+            span{
+                transition: 0.5s;
+                display: none;
+            }
+
+            &:hover{
+                transition: 0.3s;
+                color: white;
+                & span{
+                    transition: 0.2s;
+                    display: block;
+                }
+            }
+
+        }
+    }
+}
+
+a{
+    text-decoration: none;
+    color: $colorOne;
+}
+
+main{
+    background-color: white;
+    display: grid;
+    place-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .tonel{
+        width: 560px;
+        padding: 16px 28px;
+        display: grid;
+        height: 560px;
+        grid-template-rows: 0.4fr 1.6fr 0.4fr;
+        
+        .top{
+            display: flex;
+            align-items: center;
+            font-size: 32px;
+            
+            span::after{
+                content: '';
+                background-color: $colorOne;
+                display: block;
+                width: 64px;
+                height: 5px;
+                border-radius: 4px;
+            }
+        }
+        .middle{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+
+            .fieldInput{
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                input[type='text'], input[type='password']{
+                    width: 440px;
+                    height: 40px;
+                    border-radius: 4px;
+                    border: none;
+                    background-color: #e7e5e5;  
+                    outline: none;  
+                    padding: 0px 8px;
+                    color: rgb(48, 47, 61);      
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+                }
+            }
+            
+            .checkBox{
+                align-self: flex-start;
+                position: relative; 
+                right: -28px;
+                display: flex;
+                align-items: center;
+            }
+
+            button{
+                margin-top: 44px;
+                margin-bottom: 16px;
+                width: 90%;
+                height: 40px;
+                background-color: $colorOne;
+                color: white;
+                border-radius: 4px;
+                border: none;
+                font-size: 16px;
+                cursor: pointer;
+                
+            }
+
+          
+        }
+        .bottom{
+            display: grid;
+            place-items: center;
+            color: rgb(59, 55, 68);
+            font-size: 12px;
+        }
+    }
+}
+
