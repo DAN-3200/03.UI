@@ -14,9 +14,9 @@ body{
     margin: 0;
     padding: 0;
     height: 100vh;
-
+    
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.4fr 0.8fr;
 }
 
 $colorOne : #FFAA33;
@@ -24,16 +24,19 @@ $colorTwo : #F4BB44;
 
 banner{
     overflow: hidden;
-    display: flex;
+    display: grid;
+    grid-template-areas: "H";
 
     img{
+        grid-area: H;
         height: 100%;
+        width: 100%;
         object-fit: cover;
-        position: absolute;
         z-index: -1;
     }
 
     & div{
+        grid-area: H;
         width: 100%;
         padding: 16px;
         button{
@@ -82,9 +85,9 @@ main{
 
     .tonel{
         width: 560px;
-        padding: 16px 28px;
+        padding: 16px 36px;
         display: grid;
-        height: 560px;
+        height: 572px;
         grid-template-rows: 0.4fr 1.6fr 0.4fr;
         
         .top{
@@ -98,6 +101,7 @@ main{
                 display: block;
                 width: 64px;
                 height: 5px;
+                margin-top: 4px;
                 border-radius: 4px;
             }
         }
@@ -106,6 +110,8 @@ main{
             flex-direction: column;
             align-items: center;
             gap: 8px;
+            margin: 20px 0px;
+            padding-top: 28px;
 
             .fieldInput{
                 display: flex;
@@ -127,15 +133,43 @@ main{
             .checkBox{
                 align-self: flex-start;
                 position: relative; 
-                right: -28px;
-                display: flex;
+                right: -24px;
+                display: grid;
+                grid-template-areas: "H P";
                 align-items: center;
+                margin-top: 8px;
+                gap: 4px;
+
+                input[type='checkbox']{
+                    grid-area: H;
+                    z-index: 2;
+                    opacity: 0;
+                    cursor: pointer;
+                    
+                    &:checked + label{
+                        background-color: #F4BB44;
+                        content: '✔';
+                        
+                    }
+                }
+
+                label{
+                    height: 20px;
+                    grid-area: H;
+                    content: '';
+                    border-radius: 4px;
+                    border: #28282b 2px solid;
+                }
+                span{
+                    grid-area: P;
+                }
+
             }
 
             button{
-                margin-top: 44px;
-                margin-bottom: 16px;
-                width: 90%;
+                margin-top: 40px;
+                margin-bottom: 12px;
+                width: 80%;
                 height: 40px;
                 background-color: $colorOne;
                 color: white;
@@ -146,6 +180,26 @@ main{
                 
             }
 
+            .extra{
+                display: flex;
+                flex-direction: row;
+                gap: 8px;
+
+                button{
+                    display: grid;
+                    place-items: center;
+                    min-width: 64px;
+                    color: #28282b;
+                    background-color: rgb(211, 209, 209);
+                    transition: 0.3s;
+
+                    &:hover{
+                        transition: 0.3s;
+                        background-color: $colorTwo;
+                        color: white;
+                    }
+                }
+            }
           
         }
         .bottom{
@@ -155,5 +209,30 @@ main{
             font-size: 12px;
         }
     }
+}
+
+@media (max-width: 1000px) {
+    body{
+        grid-template-areas: "H";
+
+        banner{
+            grid-area: H;
+            z-index: 5;
+            
+            img{
+                display: none;
+            }
+        }
+        main{
+            grid-area: H;
+
+            .tonel{
+                height: 100vh;
+                width: 100%;
+            }
+        }
+    }
+
+
 }
 

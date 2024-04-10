@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   box-sizing: border-box;
@@ -12,21 +13,24 @@ body {
   padding: 0;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.4fr 0.8fr;
 }
 
 banner {
   overflow: hidden;
-  display: flex;
+  display: grid;
+  grid-template-areas: "H";
 }
 banner img {
+  grid-area: H;
   height: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  position: absolute;
   z-index: -1;
 }
 banner div {
+  grid-area: H;
   width: 100%;
   padding: 16px;
 }
@@ -72,9 +76,9 @@ main {
 }
 main .tonel {
   width: 560px;
-  padding: 16px 28px;
+  padding: 16px 36px;
   display: grid;
-  height: 560px;
+  height: 572px;
   grid-template-rows: 0.4fr 1.6fr 0.4fr;
 }
 main .tonel .top {
@@ -88,6 +92,7 @@ main .tonel .top span::after {
   display: block;
   width: 64px;
   height: 5px;
+  margin-top: 4px;
   border-radius: 4px;
 }
 main .tonel .middle {
@@ -95,6 +100,8 @@ main .tonel .middle {
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  margin: 20px 0px;
+  padding-top: 28px;
 }
 main .tonel .middle .fieldInput {
   display: flex;
@@ -115,14 +122,37 @@ main .tonel .middle .fieldInput input[type=text], main .tonel .middle .fieldInpu
 main .tonel .middle .checkBox {
   align-self: flex-start;
   position: relative;
-  right: -28px;
-  display: flex;
+  right: -24px;
+  display: grid;
+  grid-template-areas: "H P";
   align-items: center;
+  margin-top: 8px;
+  gap: 4px;
+}
+main .tonel .middle .checkBox input[type=checkbox] {
+  grid-area: H;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+main .tonel .middle .checkBox input[type=checkbox]:checked + label {
+  background-color: #F4BB44;
+  content: "✔";
+}
+main .tonel .middle .checkBox label {
+  height: 20px;
+  grid-area: H;
+  content: "";
+  border-radius: 4px;
+  border: #28282b 2px solid;
+}
+main .tonel .middle .checkBox span {
+  grid-area: P;
 }
 main .tonel .middle button {
-  margin-top: 44px;
-  margin-bottom: 16px;
-  width: 90%;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  width: 80%;
   height: 40px;
   background-color: #FFAA33;
   color: white;
@@ -131,9 +161,47 @@ main .tonel .middle button {
   font-size: 16px;
   cursor: pointer;
 }
+main .tonel .middle .extra {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+main .tonel .middle .extra button {
+  display: grid;
+  place-items: center;
+  min-width: 64px;
+  color: #28282b;
+  background-color: rgb(211, 209, 209);
+  transition: 0.3s;
+}
+main .tonel .middle .extra button:hover {
+  transition: 0.3s;
+  background-color: #F4BB44;
+  color: white;
+}
 main .tonel .bottom {
   display: grid;
   place-items: center;
   color: rgb(59, 55, 68);
   font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    grid-template-areas: "H";
+  }
+  body banner {
+    grid-area: H;
+    z-index: 5;
+  }
+  body banner img {
+    display: none;
+  }
+  body main {
+    grid-area: H;
+  }
+  body main .tonel {
+    height: 100vh;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */
